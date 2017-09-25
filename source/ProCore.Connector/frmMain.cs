@@ -16,5 +16,10 @@ namespace ProCore.Connector
         {
             InitializeComponent();
         }
+
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

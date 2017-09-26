@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EndPoints>
+  <EndPoint>/vapid/offices</EndPoint>
+  <EndPoint>/vapid/offices/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/programs</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/programs/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_bid_types</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_bid_types/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_owner_types</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_owner_types/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_regions</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_regions/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_stages</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_stages/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_types</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/project_types/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/trades</EndPoint>
+  <EndPoint>/vapid/companies</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/insurances</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/insurances/{id}</EndPoint>
+  <EndPoint>/vapid/companies/{company_id}/users</EndPoint>
+</EndPoints>

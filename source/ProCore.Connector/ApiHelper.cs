@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace ProCore.Connector
     {
         public static bool GetTokenInfo(string accessToken , string baseUrl)
         {
-            string tokenInfoUrl = "oauth/token/info";
+            string tokenInfoUrl = "/oauth/token/info";
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(baseUrl);
             // Add an Accept header for JSON format.
@@ -39,7 +40,7 @@ namespace ProCore.Connector
             return newToken.access_token;
         }
 
-        public static void GetData(string baseUrl , string dataEndpoint)
+        public static string GetData(string baseUrl , string dataEndpoint)
         {
             HttpResponseMessage response = null;
             HttpClient client = new HttpClient();
@@ -47,7 +48,9 @@ namespace ProCore.Connector
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", ConfigurationSettings.AppSettings.Get("accessToken"));
-            response = client.GetAsync(baseUrl + $"vapid/{dataEndpoint}").Result;  // Blocking call!
+            response = client.GetAsync(baseUrl + $"{dataEndpoint}").Result;  // Blocking call!
+            string result = response.Content.ReadAsAsync<string>().Result;
+           return JValue.Parse(result).ToString(Newtonsoft.Json.Formatting.Indented);
         }
     }
 }

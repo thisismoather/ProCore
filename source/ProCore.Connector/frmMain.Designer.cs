@@ -35,16 +35,20 @@
             this.txtBaseUrl = new System.Windows.Forms.TextBox();
             this.lblUrl = new System.Windows.Forms.Label();
             this.btnQuery = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstViewEndPoints
             // 
             this.lstViewEndPoints.Location = new System.Drawing.Point(3, 12);
+            this.lstViewEndPoints.MultiSelect = false;
             this.lstViewEndPoints.Name = "lstViewEndPoints";
             this.lstViewEndPoints.Size = new System.Drawing.Size(165, 428);
             this.lstViewEndPoints.TabIndex = 0;
             this.lstViewEndPoints.UseCompatibleStateImageBehavior = false;
+            this.lstViewEndPoints.View = System.Windows.Forms.View.List;
+            this.lstViewEndPoints.Click += new System.EventHandler(this.lstViewEndPoints_Click);
             // 
             // panel1
             // 
@@ -80,7 +84,7 @@
             this.txtBaseUrl.Name = "txtBaseUrl";
             this.txtBaseUrl.Size = new System.Drawing.Size(391, 20);
             this.txtBaseUrl.TabIndex = 1;
-            this.txtBaseUrl.Text = "https://app.procore.com/";
+            this.txtBaseUrl.Text = "https://app.procore.com";
             // 
             // lblUrl
             // 
@@ -101,11 +105,21 @@
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(175, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 444);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lstViewEndPoints);
@@ -114,6 +128,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,6 +141,7 @@
         private System.Windows.Forms.TextBox txtDataEndPoint;
         private System.Windows.Forms.Label lblDataEndPoint;
         private System.Windows.Forms.Button btnQuery;
+        private System.Windows.Forms.Label label1;
     }
 }
 

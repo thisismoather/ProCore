@@ -1,0 +1,67 @@
+﻿@model ProCore.Connector.Web.Models.ProCoreModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="list-group">
+            <a href="#" class="list-group-item">/vapid/offices</a>
+            <a href="#" class="list-group-item">/vapid/offices/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/programs</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/programs/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_bid_types</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_bid_types/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_owner_types</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_owner_types/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_regions/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_stages/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_stages</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_types</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/project_types/{id}</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/trades</a>
+            <a href="#" class="list-group-item">/vapid/companies</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/insurances</a>
+            <a href="#" class="list-group-item">/vapid/companies/6797/users</a>
+
+            
+        </div>
+    </div>
+    <div class="col-md-8">
+        @using (Html.BeginForm("GetData", "ProCore", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+           
+            <div class="form-group">
+                <span class="control-label col-md-2">Base Url</span>
+                <span class="form-control col-md-10" style="width:auto;">http://app.procore.com</span>
+            </div>
+            <div class="form-group">
+                <span class="col-md-2 control-label">End Point</span>
+                @Html.TextBoxFor(m => m.EndPoint, new { @class = "form-control", @id= "txtEndPoint" })
+                @Html.ValidationMessageFor(m => m.EndPoint)
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Get Data" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.list-group-item').click(function () {
+            $("#txtEndPoint").val(arguments[0].currentTarget.innerHTML);
+        });
+    });
+
+</script>
+}

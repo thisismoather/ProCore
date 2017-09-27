@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProCore.Connector", "ProCore.Connector\ProCore.Connector.csproj", "{BF3A4D7E-4844-4DF2-AEF5-8B9EBB3B96E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProCore.Connector.Web", "ProCore.Connector.Web\ProCore.Connector.Web.csproj", "{D97D5DB2-9247-4C21-A699-30C9EA359CDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BF3A4D7E-4844-4DF2-AEF5-8B9EBB3B96E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF3A4D7E-4844-4DF2-AEF5-8B9EBB3B96E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF3A4D7E-4844-4DF2-AEF5-8B9EBB3B96E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97D5DB2-9247-4C21-A699-30C9EA359CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97D5DB2-9247-4C21-A699-30C9EA359CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97D5DB2-9247-4C21-A699-30C9EA359CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97D5DB2-9247-4C21-A699-30C9EA359CDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

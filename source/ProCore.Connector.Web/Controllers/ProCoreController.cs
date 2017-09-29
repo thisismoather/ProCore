@@ -30,7 +30,7 @@ namespace ProCore.Connector.Web.Controllers
             return View();
         }
 
-        public ActionResult Authenticate()
+        public void Authenticate()
        {
             string code = Request.QueryString["code"];
             if (!string.IsNullOrEmpty(code))
@@ -43,7 +43,9 @@ namespace ProCore.Connector.Web.Controllers
                 Session["AccessToken"] = newToken.access_token;
                 Session["RefreshToken"] = newToken.refresh_token;
             }
-            return View("Index");
+            Response.Redirect("/ProCore");
+           // RedirectToActionPermanent("Index");
+            //return View("Index");
         }
 
         [HttpPost]
@@ -73,8 +75,10 @@ namespace ProCore.Connector.Web.Controllers
                 response = ApiHelper.GetData(_baseUrl, model.EndPoint,token.access_token);
             }
             byte[] filedata = Encoding.ASCII.GetBytes(response); //System.IO.File.ReadAllBytes(response);
+            var temp = model.EndPoint.Remove(model.EndPoint.IndexOf('?')).Remove(0, 7).Split(new char[] { '/' });
+            var result = (from s in temp select s).Reverse().Take(2).Reverse().ToList();
 
-            return File(filedata, "application/json", "ProCoreData.json");
+            return File(filedata, "application/json", result.Count == 2 ? $"{result[0]}_{result[1]}.json" : $"{result[0]}.json");
             //return Json(response);
         }
     }
